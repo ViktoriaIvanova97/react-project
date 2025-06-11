@@ -1,7 +1,7 @@
 import React from "react";
 
-const NumberFun = (props) => {
-  return <p>Return value number- {props.num}</p>;
+const NumberFun = ({num}) => {
+  return <p>Return value number- {num}</p>;
 };
 
 export default NumberFun;

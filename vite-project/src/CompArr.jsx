@@ -1,7 +1,7 @@
 import React from "react";
 
-const ArrFun = (props) => {
-  return <p>Return value array - {props.arr.map(el=> 'элемент массива: ' + el +'; ')}</p>;
+const ArrFun = ({arr}) => {
+  return <p>Return value array - {arr.map(el=> 'элемент массива: ' + el +'; ')}</p>;
 };
 
 
