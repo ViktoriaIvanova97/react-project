@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import StateFun from "./State";
 
 import ArrFun from "./CompArr";
 import BoolFun from "./CompBoolean";
@@ -23,6 +24,7 @@ function App() {
       <NumberFun num={123} />
       <ObjFun obj={{ name: "vika", age: 27 }} />
       <StrFun str={"hello"} />
+      <StateFun />
     </>
   );
 }
