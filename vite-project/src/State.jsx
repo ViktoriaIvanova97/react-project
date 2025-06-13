@@ -4,22 +4,30 @@ const StateFun = () => {
   const [increaseState, increaseSetState] = useState(0);
   const [hideState, hideSetState] = useState(false);
   const [inputState, inputSetState] = useState("");
+  const [colorState, colorSetState] = useState("red");
 
-  const chageInput = (text) => {
+  const changeInput = (text) => {
     inputSetState(text.target.value);
+  };
+
+  const changeColor = () => {
+    colorSetState(colorState === "red" ? "green" : "red");
+  };
+  const style = {
+    color: colorState,
   };
 
   return (
     <>
       <div>
-        <p>state: {increaseState}</p>
+        <h1>state: {increaseState}</h1>
         <button onClick={() => increaseSetState((preState) => preState + 1)}>
           click
         </button>
       </div>
 
       <div>
-        {hideState && <p>HELLO!</p>}
+        {hideState && <h2>HELLO!</h2>}
         <button
           onClick={() => {
             hideSetState((hide) => !hide);
@@ -27,13 +35,18 @@ const StateFun = () => {
         >
           Показать/скрыть текст
         </button>
-		  </div>
+      </div>
 
       <div>
         <label>
-          <input type="text" value={inputState} onChange={chageInput} />
+          <input type="text" value={inputState} onChange={changeInput} />
         </label>
-        <p>text:{inputState}</p>
+        <h3>text:{inputState}</h3>
+		</div>
+
+      <div>
+        <h4 style ={style}>COLOR</h4>
+        <button onClick={changeColor}>Change color</button>
       </div>
     </>
   );
